@@ -1,0 +1,96 @@
+/**
+ * Body CSS
+ */
+
+html,
+body,
+input,
+textarea,
+button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+/**
+  * Header CSS
+  */
+header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+header ul.mui-list--inline {
+  margin-bottom: 0;
+}
+
+header a {
+  color: #fff;
+}
+
+header table {
+  width: 100%;
+}
+
+/**
+  * Content CSS
+  */
+#content-wrapper {
+  /* min-height: 100%; */
+
+  /* sticky footer */
+  box-sizing: border-box;
+  /* margin-bottom: -100px; */
+  /* padding-bottom: 100px; */
+}
+
+/**
+  * Footer CSS
+  */
+footer {
+  box-sizing: border-box;
+  height: 150px;
+  width: 100%;
+  background-color: #eee;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 35px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #57a0db;
+}
+.footer-span-div {
+  display: flex;
+  justify-content: flex-start;
+}
+.footer-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button-div {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer-title {
+  font-size: 20px;
+  font-family: Arial, Verdana, Tahoma;
+  color: #fff;
+}
+.footer-button {
+  color: #57a0db;
+}
+/*
+    Form
+*/
+#page-form {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  max-width: 700px;
+}
