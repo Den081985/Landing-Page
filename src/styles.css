@@ -3,6 +3,11 @@
  */
 
 html,
+body {
+  height: 100%;
+}
+
+html,
 body,
 input,
 textarea,
@@ -13,84 +18,63 @@ button {
 }
 
 /**
-  * Header CSS
-  */
-header {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 2;
+   * Sidebar CSS
+   */
+
+#sidebar {
+  background-color: #2196f3;
+  padding: 15px;
 }
 
-header ul.mui-list--inline {
-  margin-bottom: 0;
-}
-
-header a {
-  color: #fff;
-}
-
-header table {
-  width: 100%;
+@media (min-width: 768px) {
+  #sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 180px;
+    height: 100%;
+    padding-top: 30px;
+  }
 }
 
 /**
-  * Content CSS
-  */
-#content-wrapper {
-  /* min-height: 100%; */
-
-  /* sticky footer */
-  box-sizing: border-box;
-  /* margin-bottom: -100px; */
-  /* padding-bottom: 100px; */
+   * Content CSS
+   */
+@media (min-width: 768px) {
+  #content {
+    margin-left: 180px;
+  }
 }
 
-/**
-  * Footer CSS
-  */
-footer {
-  box-sizing: border-box;
-  height: 150px;
-  width: 100%;
-  background-color: #eee;
-  border-top: 1px solid #e0e0e0;
-  padding-top: 35px;
+.floating-btn-one {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: #57a0db;
+  bottom: 60px;
+  right: 60px;
 }
-.footer-span-div {
-  display: flex;
-  justify-content: flex-start;
+.floating-btn-two {
+  position: fixed;
+  bottom: 60px;
+  right: 200px;
 }
-.footer-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* 
+.modal {
+  max-width: 600px;
+  max-height: 500px;
+  margin: 100px auto;
+  overflow-y: auto;
+  background: #fff;
 }
-.button-div {
-  display: flex;
-  justify-content: flex-end;
+.modal h1 {
+  text-align: center;
 }
-.footer-title {
-  font-size: 20px;
-  font-family: Arial, Verdana, Tahoma;
-  color: #fff;
-}
-.footer-button {
-  color: #57a0db;
-}
-/*
-    Form
-*/
+
+.modal .modal-content {
+  padding: 1rem;
+} */
+
 #page-form {
-  margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
-  max-width: 700px;
+  margin-top: 50px;
+}
+.question-div {
+  color: #2196f3;
 }

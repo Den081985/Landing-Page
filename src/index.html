@@ -4,75 +4,71 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Landing Page</title>
     <link
+      href="https://cdn.muicss.com/mui-latest/css/mui.min.css"
       rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      type="text/css"
     />
-    <link
-      rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="//cdn.muicss.com/mui-0.10.3/extra/mui-colors.min.css"
-    />
-    <script src="//cdn.muicss.com/mui-0.10.3/extra/mui-combined.min.js"></script>
-    <!-- <script src="https://cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script> -->
-    <style>
-      /* Tutorial CSS goes here */
-    </style>
+
+    <script src="https://cdn.muicss.com/mui-latest/js/mui.min.js"></script>
+    <title>Вопросы</title>
   </head>
   <body>
-    <header class="mui-appbar mui--z1">
-      <!-- Appbar HTML goes here -->
-      <div class="mui-container">
-        <table>
-          <tr class="mui--appbar-height">
-            <td class="mui--text-title">Simple Landing Page</td>
-            <td class="mui--text-right">
-              <ul class="mui-list--inline mui--text-body2">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li>
-                  <a href="#"
-                    ><i class="fa fa-user" aria-hidden="true"></i> Login</a
-                  >
-                </li>
-              </ul>
-            </td>
-          </tr>
-        </table>
+    <button
+      class="mui-btn mui-btn--raised mui-btn--primary floating-btn-one"
+      disabled
+    >
+      Button
+    </button>
+    <button
+      class="mui-btn mui-btn--raised mui-btn--primary floating-btn-two"
+      disabled
+    >
+      Button
+    </button>
+    <div id="sidebar">
+      <div class="mui--text-white mui--text-display1 mui--align-vertical">
+        Вопросы...
       </div>
-    </header>
-    <div id="content-wrapper" class="mui--text-center">
-      <!-- Content HTML goes here -->
-      <form class="mui-form" id="page-form">
-        <div class="mui-textfield mui-textfield--float-label">
-          <input type="text" />
-          <label></label>
-        </div>
-        <div class="mui-textfield mui-textfield--float-label">
-          <input type="text" value="" />
-          <label></label>
-        </div>
-        <div class="mui-textfield mui-textfield--float-label">
-          <textarea></textarea>
-          <label></label>
-        </div>
-        <button type="submit" class="mui-btn mui-btn--raised">Submit</button>
-      </form>
     </div>
-    <footer>
-      <div class="mui-container mui--text-center footer-div">
-        <div class="footer-span-div">
-          <span class="footer-title">Simple App for learning JavaScript</span>
-        </div>
-        <div class="button-div">
-          <button class="mui-btn footer-button">Button</button>
-          <button class="mui-btn footer-button">Button</button>
+    <div id="content" class="mui-container-fluid">
+      <div class="mui-row">
+        <div class="mui-col-sm-10 mui-col-sm-offset-1">
+          <form class="mui-form" id="page-form">
+            <div class="mui-textfield mui-textfield--float-label">
+              <input type="text" id="theme-input" />
+              <label for="theme-input">Тема вопроса:</label>
+            </div>
+            <div class="mui-textfield mui-textfield--float-label">
+              <input
+                type="text"
+                id="question-input"
+                required
+                minlength="5"
+                maxlength="100"
+              />
+              <label for="question-input">Ваш вопрос:</label>
+            </div>
+            <button
+              type="submit"
+              id="submit"
+              class="mui-btn mui-btn--raised mui-btn--primary"
+              disabled
+            >
+              Задать вопрос
+            </button>
+          </form>
+
+          <br />
+          <br />
+          <div class="mui--text-black-54 mui--text-body2 question-div">
+            ВАШИ ВОПРОСЫ
+          </div>
+          <div class="mui-divider"></div>
+          <br />
+          <div id="list"></div>
         </div>
       </div>
-    </footer>
+    </div>
   </body>
 </html>
