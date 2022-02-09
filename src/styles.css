@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 /**
  * Body CSS
  */
@@ -45,7 +46,7 @@ button {
     margin-left: 180px;
   }
 }
-
+/* Buttons */
 .floating-btn-one {
   position: fixed;
   bottom: 60px;
@@ -54,27 +55,79 @@ button {
 .floating-btn-two {
   position: fixed;
   bottom: 60px;
-  right: 200px;
+  right: 240px;
 }
-/* 
+
+#modal-btn {
+  position: fixed;
+  bottom: 60px;
+  left: 25px;
+  color: #2196f3;
+}
+/* Modal window */
 .modal {
   max-width: 600px;
   max-height: 500px;
   margin: 100px auto;
   overflow-y: auto;
   background: #fff;
-}
-.modal h1 {
-  text-align: center;
-}
-
-.modal .modal-content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
-} */
+  border-radius: 5px;
+}
 
+.modal-element {
+  padding-bottom: 3px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  color: #2196f3;
+}
+.modal-date {
+  padding-bottom: 1rem;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  color: #2196f3;
+}
+.modal-none {
+  font-family: "Montserrat", sans-serif;
+  color: #2196f3;
+}
+/* Form */
 #page-form {
   margin-top: 50px;
 }
 .question-div {
   color: #2196f3;
+}
+
+/* Auth window */
+
+.auth-modal {
+  max-width: 700px;
+  max-height: 600px;
+  margin: 100px auto;
+  overflow-y: auto;
+  background: #fff;
+}
+
+.auth-modal .auth-title {
+  text-align: center;
+  padding: 1rem;
+  color: #2196f3;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.auth-modal .auth-content {
+  padding: 1rem;
+}
+.auth-modal .auth-data {
+  padding: 1rem;
+  color: #2196f3;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 12px;
 }

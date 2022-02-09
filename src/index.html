@@ -9,27 +9,32 @@
       rel="stylesheet"
       type="text/css"
     />
-
+    <link
+      rel="favicon.png"
+      href="../img/icons8-help-48.png"
+      type="image/x-icon"
+    />
     <script src="https://cdn.muicss.com/mui-latest/js/mui.min.js"></script>
     <title>Вопросы</title>
   </head>
   <body>
     <button
       class="mui-btn mui-btn--raised mui-btn--primary floating-btn-one"
-      disabled
+      id="auth-btn"
     >
-      Button
+      РЕГИСТРАЦИЯ
     </button>
     <button
       class="mui-btn mui-btn--raised mui-btn--primary floating-btn-two"
-      disabled
+      id="enter-btn"
     >
-      Button
+      ВХОД
     </button>
     <div id="sidebar">
       <div class="mui--text-white mui--text-display1 mui--align-vertical">
         Вопросы...
       </div>
+      <button class="mui-btn" id="modal-btn">Все вопросы</button>
     </div>
     <div id="content" class="mui-container-fluid">
       <div class="mui-row">
