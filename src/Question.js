@@ -1,6 +1,7 @@
 //модуль для обработки вопросов
 //класс с методами обработки вопросов
 export class Question {
+  //метод create выполняет запрос в базу данных,помещает вопрос в хранилище
   static create(question) {
     return fetch(
       "https://authorize-page-default-rtdb.firebaseio.com/authorize-page.json",
@@ -20,6 +21,7 @@ export class Question {
       .then((question) => putToStorage(question))
       .then(Question.render);
   }
+  //выполняет рендер элементов вопросов
   static render() {
     const elements = getFromStorage();
     const html = elements.length
@@ -41,16 +43,16 @@ export function putToStorage(question) {
 }
 
 //функция генерации модального окна с отображением вопросов
-function renderModal(question) {
+export function renderModal(question) {
   return `
-    <div class="modal-element">
-        <span class="modal-theme">Вопрос на  тему: ${question.theme}</span>
-        <div class="modal-text">${question.question}</div>
-        <div class="modal-time">
+    
+        <span class="modal-element">Вопрос на  тему: ${question.theme}</span>
+        <div class="modal-element">${question.question}</div>
+        <div class="modal-date">
             ${new Date(question.date).toLocaleDateString()}
             ${new Date(question.date).toLocaleTimeString()}
         </div>
-    </div>
+   
   
   `;
 }
