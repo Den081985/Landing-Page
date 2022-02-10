@@ -131,3 +131,10 @@ button {
   text-align: center;
   font-size: 12px;
 }
+
+.auth-content {
+  color: #2196f3;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  padding: 5px;
+}
