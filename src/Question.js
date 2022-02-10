@@ -30,6 +30,41 @@ export class Question {
     const list = document.getElementById("list");
     list.innerHTML = html;
   }
+  //метод для работы с idToken
+
+  static fetch(token) {
+    if (!token) {
+      return Promise.resolve(
+        "<p class='comment-error'>ОТСУТСТВУЕТ АВТОРИЗАЦИЯ</p>"
+      );
+    }
+    return fetch(
+      `https://authorize-page-default-rtdb.firebaseio.com/authorize-page.json?auth=${token}`
+    )
+      .then((response) => response.json())
+      .then((content) => {
+        if (content && content.error) {
+          return `<h2 class="content-error">${content.error}</h2>`;
+        }
+        return content
+          ? Object.keys(content).map((key) => ({
+              ...content[key],
+              id: key,
+            }))
+          : [];
+      });
+  }
+  //метод для приведения элементов к html
+  static returnHTML(questions) {
+    return questions.length
+      ? `
+      <ul>
+        ${questions.map((question) => `<li>${question.question}</li>`).join("")}
+      </ul>
+    
+    `
+      : "<h2>ВОПРОСОВ НЕТ</h2>";
+  }
 }
 //извлечение элементов из хранилища
 export function getFromStorage() {
