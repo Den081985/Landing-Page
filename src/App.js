@@ -6,7 +6,12 @@ import {
   openQuestionsModal,
 } from "./Utils";
 import { Question } from "./Question";
-import { authEmailAndPassword, openAuthEnter, openAuthModal } from "./Auth";
+import {
+  authEmailAndPassword,
+  enterEmailAndPassword,
+  openAuthEnter,
+  openAuthModal,
+} from "./Auth";
 
 const form = document.getElementById("page-form");
 const theme = form.querySelector("#theme-input");
@@ -20,7 +25,7 @@ form.addEventListener("submit", submitHandler);
 
 authBtn.addEventListener("click", renderAuthModal);
 
-enterBtn.addEventListener("click", enterHandler);
+enterBtn.addEventListener("click", renderEnterModal);
 
 input.addEventListener("input", () => {
   submit.disabled = !formValid(input.value);
@@ -79,4 +84,24 @@ function authHandler(event) {
 }
 
 // функция для работы с данными входа
-function enterHandler() {}
+function enterHandler(event) {
+  event.preventDefault();
+
+  const email = event.target.querySelector("#email").value;
+  const password = event.target.querySelector("#password").value;
+  const btn = event.target.querySelector("button");
+
+  btn.disabled = true;
+
+  enterEmailAndPassword(email, password)
+    .then(Question.fetch)
+    .then(renderAfterEnterModal);
+}
+//функция отображения списка вопросов после входа
+function renderAfterEnterModal(content) {
+  if (content === "string") {
+    activateModal("ОШИБКА", content);
+  } else {
+    activateModal("ВОПРОСЫ", Question.returnHTML(content));
+  }
+}
