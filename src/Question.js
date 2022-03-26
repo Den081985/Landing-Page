@@ -59,7 +59,7 @@ export class Question {
     return questions.length
       ? `
       <ul>
-        ${questions.map((question) => `<li>${question.question}</li>`).join("")}
+        ${questions.map((question) => `<li class="question-item">${question.question}</li>`).join("")}
       </ul>
     
     `
