@@ -64,6 +64,13 @@ button {
   left: 25px;
   color: #2196f3;
 }
+@media (max-width: 425px) {
+  #modal-btn {
+    position: fixed;
+    right: 60px;
+    bottom: 10px;
+  }
+}
 /* Modal window */
 .modal {
   max-width: 600px;
